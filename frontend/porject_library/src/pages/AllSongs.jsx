@@ -21,6 +21,7 @@ function AllSongs() {
       <div className="main-container">
         {musicLibrary.map((music, index) => (
           <div className="music-library" key={index}>
+            <img src={music.image} alt={music.image} className="musicPicture"/>
             <h2>{music.title}</h2>
             <p>Artist: {music.artist}</p>
             <p>Genre: {music.genre.join(", ")}</p>

@@ -47,6 +47,8 @@ const createMusic = async (req, res) => {
     title: title,
     artist: artist,
     genre: genre,
+    image:'https://i.pinimg.com/564x/66/39/19/66391940e99ae6e58a0478b9c23f333d.jpg',
+    // imageUrl: imageUrl || 'https://i.pinimg.com/564x/66/39/19/66391940e99ae6e58a0478b9c23f333d.jpg'
   });
   // --------------------------------(3)
   res.json({ music: music });
