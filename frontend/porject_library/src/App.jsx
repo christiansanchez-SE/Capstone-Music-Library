@@ -1,26 +1,18 @@
-import { useState, useEffect } from "react";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import './styles/App.css';
-import {getMusic} from "./utility/music-api";
+import Homepage from "./pages/Homepage";
+import AllSongs from "./pages/AllSongs";
+import Navbar from "./components/Nav"
 
 function App() {
-  const [musicLibrary, setMusicLibrary] = useState([]);
-
-  useEffect(() => {
-    getMusic(setMusicLibrary);
-  }, []);
-
   return (
     <div className="app">
-      <h1>Music Library</h1>
-      <ul>
-        {musicLibrary.map((music, index) => (
-          <li key={index}>
-            <h2>{music.title}</h2>
-            <p>Artist: {music.artist}</p>
-            <p>Genre: {music.genre.join(", ")}</p>
-          </li>
-        ))}
-      </ul>
+      <Navbar />
+     <Routes>
+        <Route path="/" element={<Homepage/>} />
+        <Route path="/AllSongs" element={<AllSongs/>}/>
+      </Routes>
     </div>
   );
 }
