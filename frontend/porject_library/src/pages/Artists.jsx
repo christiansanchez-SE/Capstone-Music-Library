@@ -13,14 +13,14 @@ function Artists() {
   }, []);
   return (
     <div className="artistsPage">
-      <div className="main-page-title">
+      <div className="artist-main-page-title">
       <h1>Artists Page</h1>
       </div>
-      <div className="main-container">
+      <div className="artist-main-container">
       {musicLibrary.map((music, index) => (
-          <div className="music-library" key={index}>
+          <div className="artist-music-library" key={index}>
             <h2>Artist: {music.artist}</h2>
-            <img src={music.image} alt={music.image} className="musicPicture"/>
+            <img src={music.image} alt={music.image} className="artist-musicPicture"/>
           </div>
         ))}
       </div>

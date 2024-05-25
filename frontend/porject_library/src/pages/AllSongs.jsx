@@ -14,14 +14,14 @@ function AllSongs() {
   }, []);
 
   return (
-    <div>
-      <div className="main-page-title">
+    <div className="allSongs">
+      <div className="allSongs-main-page-title">
         <h1>Music Library</h1>
       </div>
-      <div className="main-container">
+      <div className="allSongs-main-container">
         {musicLibrary.map((music, index) => (
-          <div className="music-library" key={index}>
-            <img src={music.image} alt={music.image} className="musicPicture" />
+          <div className="allSongs-music-library" key={index}>
+            <img src={music.image} alt={music.image} className="allSongs-musicPicture" />
             <h2>{music.title}</h2>
             <p>Artist: {music.artist}</p>
             <p>Genre: {music.genre.join(", ")}</p>

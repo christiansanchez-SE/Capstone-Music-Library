@@ -11,11 +11,13 @@ function Homepage() {
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % musicLibrary.length);
-    }, 2000);
+    if (musicLibrary.length > 0) {
+      const interval = setInterval(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % musicLibrary.length);
+      }, 6000);
 
-    return () => clearInterval(interval);
+      return () => clearInterval(interval);
+    }
   }, [musicLibrary.length]);
 
   if (musicLibrary.length === 0) {
@@ -26,36 +28,46 @@ function Homepage() {
 
   return (
     <div className="homePage">
-      <div className="hompage-title">
-        <h1>Music Library</h1>
-      </div>
-
-      <div className="middle-page">
-        <div className="homepage-content">
-          <div className="homepage-containerOne">
-            Discover, Create, and Share Your Ultimate Playlists!
-          </div>
-
-          <div className="homepage-containerTwo">
-            Explore a world of music at your fingertips. Build playlists, add
-            your favorite tracks, and share with friends.
-          </div>
-
-          <div className="homepage-containerThree">
-            Start Your Music Journey Now
-          </div>
-
-          <div className="homepage-containerFour">Connect with Us</div>
+      <div className="hompage-container">
+        <div className="hompage-title">
+          <h1>Music Library</h1>
         </div>
 
-        <div className="hompage-card">
-          <div className="homepage-music-library">
-            <h2>Artist: {currentMusic.artist}</h2>
-            <img
-              src={currentMusic.image}
-              alt={currentMusic.artist}
-              className="musicPicture"
-            />
+        <div className="middle-page">
+          <div className="homepage-content">
+            <div className="homepage-containerOne">
+              Discover, Create, and Share Your Ultimate Playlists!
+            </div>
+
+            <div className="homepage-containerTwo">
+              Explore a world of music at your fingertips. Build playlists, add
+              your favorite tracks, and share with friends.
+            </div>
+
+            <div className="homepage-containerThree">
+              Start Your Music Journey Now
+            </div>
+
+            <div className="homepage-containerFour">Connect with Us</div>
+          </div>
+
+          <div className="hompage-card">
+            <div className="homepage-music-library">
+              {musicLibrary.map((music, index) => (
+                <img
+                  key={index}
+                  src={music.image}
+                  alt={music.artist}
+                  className={`musicPicture ${
+                    index === currentIndex ? "show" : ""
+                  }`}
+                />
+              ))}
+              <div className="song-artist">
+                <h2>Artist: {currentMusic.artist}</h2>
+                <h3>Song: {currentMusic.title}</h3>
+              </div>
+            </div>
           </div>
         </div>
       </div>

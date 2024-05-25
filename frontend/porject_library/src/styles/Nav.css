@@ -5,6 +5,8 @@ nav {
     height: 100%;
     width: 70px;
     transition: width 0.5s ease;
+  font-family: sans-serif;
+
 } 
 
 a {

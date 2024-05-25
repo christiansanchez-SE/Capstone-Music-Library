@@ -1,15 +1,36 @@
 .artistsPage {
   border: solid dodgerblue;
   text-align: center;
-  /* padding: 1em; */
-  /* margin: 1em; */
-  background-color: #393e46;
+  background-color: #f7f7f7;
+  font-family: sans-serif;
 }
 
-.musicPicture {
-  border: solid dodgerblue;
+.artist-music-library{
+  border: solid red;
+  text-align: center;
+  margin: 1em;
+  padding: 1em;
+}
+
+.artist-musicPicture{
+  border: solid gray;
+  border-radius: 15px;
   height: 200px;
   width: 200px;
   text-align: center;
+  margin: 1em;
+}
+
+.artist-main-page-title{
+  border: solid green;
+  text-align: center;
+  padding: 1em;
+  margin: 1em;
+}
+
+.artist-main-container{
+  border: solid black;
+  text-align: center;
+  padding: 1em;
   margin: 1em;
 }

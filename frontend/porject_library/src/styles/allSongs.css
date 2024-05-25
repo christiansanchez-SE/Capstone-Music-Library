@@ -1,0 +1,37 @@
+.allSongs {
+    border: solid dodgerblue;
+    text-align: center;
+    background-color: #f7f7f7;
+    font-family: sans-serif;
+  }
+  
+  .allSongs-main-page-title{
+    border: solid red;
+    text-align: center;
+    margin: 1em;
+    padding: 1em;
+  }
+  
+  .allSongs-musicPicture{
+    border: solid gray;
+    border-radius: 15px;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    margin: 1em;
+  }
+  
+  .allSongs-main-page-title{
+    border: solid green;
+    text-align: center;
+    padding: 1em;
+    margin: 1em;
+  }
+  
+  .allSongs-main-container{
+    border: solid black;
+    text-align: center;
+    padding: 1em;
+    margin: 1em;
+  }
+  

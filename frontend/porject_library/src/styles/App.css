@@ -17,7 +17,7 @@ body {
 }
 
 .app{
-  border: solid black;
+  /* border: solid black; */
   height: auto;
   background-color: #393E46;
   align-items: center;

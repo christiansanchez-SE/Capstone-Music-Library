@@ -5,11 +5,14 @@ import './styles/App.css';
 import './styles/Homepage.css';
 import './styles/Nav.css';
 import './styles/Artists.css';
+import './styles/allSongs.css';
+
 
 
 import Homepage from "./pages/Homepage";
-import AllSongs from "./pages/AllSongs";
+import AllSongs from "./pages/allSongs";
 import Artists from "./pages/Artists"
+
 
 import Navbar from "./components/Nav"
 

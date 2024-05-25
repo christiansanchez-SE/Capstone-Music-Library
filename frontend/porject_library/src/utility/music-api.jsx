@@ -6,7 +6,6 @@ export async function getMusic(setState) {
       console.log(data.music);
     } catch (error) {
       console.error(error);
-      return [];
     }
   }
   
