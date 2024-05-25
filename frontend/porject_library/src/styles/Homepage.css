@@ -1,43 +1,79 @@
-.homePage{
+.homePage {
     border: solid white;
     height: auto;
-    background-color: #393E46;
+    background-color: #929AAB;
+    padding: 0.5em;
+    margin: 0.5em;
+  }
+  
+  .hompage-title {
+    border: solid black;
+    height: auto;
+    text-align: center;
+    padding: 1em;
+    margin: 1em;
+  }
+
+  .middle-page{
+    border: solid black;
+    display: flex;
+    justify-content: center;
+    padding: 0.5em;
+    margin: 0.5em;
+  }
+
+  .homepage-content{
+    border: solid green;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    background-color: #393e46;
-}
-
-.homepage-containerOne{
+    padding: 0.5em;
+    margin: 0.5em;
+  }
+  
+  .homepage-containerOne, .homepage-containerTwo, .homepage-containerThree, .homepage-containerFour {
     border: solid dodgerblue;
-    height: 200px;
-    width: 200px;
+    height: 10em;
+    width: 30em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    margin: 1em;
-}
+    padding: 0.5em;
+    margin: 0.5em;
+  }
 
-.homepage-containerTwo{
-    border: solid dodgerblue;
-    height: 200px;
-    width: 200px;
+  .homepage-music-library{
+    align-items: center;
     text-align: center;
-    margin: 1em;
-}
+  }
 
-.homepage-containerThree{
-    border: solid dodgerblue;
-    height: 200px;
-    width: 200px;
-    text-align: center;
-    margin: 1em;
-}
-
-.homepage-containerFour{
-    border: solid dodgerblue;
-    height: 200px;
-    width: 200px;
-    text-align: center;
-    margin: 1em;
-}
+  .hompage-card {
+    border: solid red;
+    display: flex;
+    align-items: center;
+    /* width: 100%; */
+    justify-content: center;
+    padding: 1em;
+    margin: 0.5em;
+  }
+  
+  .music-library {
+    width: 250px;
+    height: 354px;
+    border-radius: 30px;
+    background: #212121;
+    box-shadow: 15px 15px 30px #F7F7F7, -15px -15px 30px #F7F7F7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .musicPicture {
+    max-width: 100%;
+    border-radius: 15px;
+  }
+  
+  
