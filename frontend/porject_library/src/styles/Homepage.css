@@ -1,6 +1,43 @@
 .homePage{
-    border: solid black;
+    border: solid white;
+    height: auto;
+    background-color: #393E46;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #393e46;
+}
+
+.homepage-containerOne{
+    border: solid dodgerblue;
+    height: 200px;
+    width: 200px;
     text-align: center;
-    padding: 1em;
+    margin: 1em;
+}
+
+.homepage-containerTwo{
+    border: solid dodgerblue;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    margin: 1em;
+}
+
+.homepage-containerThree{
+    border: solid dodgerblue;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    margin: 1em;
+}
+
+.homepage-containerFour{
+    border: solid dodgerblue;
+    height: 200px;
+    width: 200px;
+    text-align: center;
     margin: 1em;
 }

@@ -3,7 +3,7 @@ import { getMusic } from "../utility/music-api";
 // import { Link } from "react-router-dom";
 
 function AllSongs() {
-    // musicLibrary holds the array of music data fetched from the backend
+  // musicLibrary holds the array of music data fetched from the backend
   // setMusicLibrary is a function to update the musicLibrary
   const [musicLibrary, setMusicLibrary] = useState([]);
 
@@ -15,13 +15,13 @@ function AllSongs() {
 
   return (
     <div>
-         <div className="main-page-title">
+      <div className="main-page-title">
         <h1>Music Library</h1>
       </div>
       <div className="main-container">
         {musicLibrary.map((music, index) => (
           <div className="music-library" key={index}>
-            <img src={music.image} alt={music.image} className="musicPicture"/>
+            <img src={music.image} alt={music.image} className="musicPicture" />
             <h2>{music.title}</h2>
             <p>Artist: {music.artist}</p>
             <p>Genre: {music.genre.join(", ")}</p>
@@ -29,7 +29,7 @@ function AllSongs() {
         ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default AllSongs
+export default AllSongs;

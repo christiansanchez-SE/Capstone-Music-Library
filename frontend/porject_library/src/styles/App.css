@@ -5,6 +5,9 @@
   text-decoration: none;
   box-sizing: border-box;
 }
+body {
+  background-color: #393E46;
+}
 
 #root {
   /* max-width: 1280px; */
@@ -15,7 +18,9 @@
 
 .app{
   border: solid black;
-  height: 100vh;
+  height: auto;
+  background-color: #393E46;
+  align-items: center;
 }
 
 .main-page-title{
@@ -24,6 +29,7 @@
   padding: 1em;
   margin: 1em;
 }
+
 .main-container{
   border: solid black;
   text-align: center;

@@ -1,15 +1,15 @@
-.artistsPage{
-    border: solid dodgerblue;
-    text-align: center;
-    padding: 1em;
-    margin: 1em;
+.artistsPage {
+  border: solid dodgerblue;
+  text-align: center;
+  /* padding: 1em; */
+  /* margin: 1em; */
+  background-color: #393e46;
 }
 
-.musicPicture{
-    border: solid dodgerblue;
-    height: 200px;
-    width: 200px;
-    text-align: center;
-    padding: 1em;
-    margin: 1em;
+.musicPicture {
+  border: solid dodgerblue;
+  height: 200px;
+  width: 200px;
+  text-align: center;
+  margin: 1em;
 }
