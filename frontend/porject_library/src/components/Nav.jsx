@@ -39,7 +39,7 @@ function Nav() {
           <Link to="/"> <FontAwesomeIcon icon={faHeart} className="fas"/><span className="navItem">Favorite Songs</span></Link>
         </li>
         <li className="navBar-indLinks">
-          <Link to="/"> <FontAwesomeIcon icon={faListUl} className="fas" /><span className="navItem">Playlist</span></Link>
+          <Link to="/Playlist"> <FontAwesomeIcon icon={faListUl} className="fas" /><span className="navItem">Playlist</span></Link>
         </li>
       </ul>
     </nav>
