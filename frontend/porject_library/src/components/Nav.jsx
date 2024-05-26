@@ -1,20 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBook, faHouse, faGuitar, faHeart, faListUl, faMusic } from '@fortawesome/free-solid-svg-icons';
+import { faBook, faHouse, faGuitar, faHeart, faListUl, faMusic, faBars } from '@fortawesome/free-solid-svg-icons';
 
 const elementOne = <FontAwesomeIcon icon={faHouse} />;
 const elementTwo = <FontAwesomeIcon icon={faMusic} />;
 const elementThree = <FontAwesomeIcon icon={faGuitar} />;
-const elementFour = <FontAwesomeIcon icon={faHeart} />;
+// const elementFour = <FontAwesomeIcon icon={faHeart} />;
 const elementFive = <FontAwesomeIcon icon={faListUl} />;
 const elementSix = <FontAwesomeIcon icon={faBook} />;
+const elementSeven = <FontAwesomeIcon icon={faBars} />
 
 function Nav() {
   return (
     <nav className="navBar">
       <div className="logoContainer">
-        <FontAwesomeIcon icon={faBook} className="logo"/>
+        <FontAwesomeIcon icon={faBars} className="logo"/>
         <span className="navItemMenu">Menu</span>
       </div>
       <div className="navBar-Lib">
@@ -36,10 +37,10 @@ function Nav() {
       </div>
       <ul className="navBar-linksContainer">
         <li className="navBar-indLinks">
-          <Link to="/"> <FontAwesomeIcon icon={faHeart} className="fas"/><span className="navItem">Favorite Songs</span></Link>
+          <Link to="/ExpandLibrary"> <FontAwesomeIcon icon={faBook} className="fas"/><span className="navItem">Expand Library</span></Link>
         </li>
         <li className="navBar-indLinks">
-          <Link to="/Playlist"> <FontAwesomeIcon icon={faListUl} className="fas" /><span className="navItem">Playlist</span></Link>
+          <Link to="/PLaylist"> <FontAwesomeIcon icon={faListUl} className="fas" /><span className="navItem">Playlist</span></Link>
         </li>
       </ul>
     </nav>

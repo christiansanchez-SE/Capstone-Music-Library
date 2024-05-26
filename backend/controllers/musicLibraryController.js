@@ -36,22 +36,27 @@ const createMusic = async (req, res) => {
   // 1. Get data from req.body
   // 2. Create music
   // 3. Respond with new copy of Music
+  try {
+    // --------------------------------(1)
+    const { title, artist, genre, image } = req.body;
+    // --------------------------------(2)
 
-  // --------------------------------(1)
-  console.log(`BODY: ${req.body}`);
-  const title = req.body.title;
-  const artist = req.body.artist;
-  const genre = req.body.genre;
-  // --------------------------------(2)
-  const music = await Music_Library.create({
-    title: title,
-    artist: artist,
-    genre: genre,
-    image:'https://i.pinimg.com/564x/66/39/19/66391940e99ae6e58a0478b9c23f333d.jpg',
-    // imageUrl: imageUrl || 'https://i.pinimg.com/564x/66/39/19/66391940e99ae6e58a0478b9c23f333d.jpg'
-  });
-  // --------------------------------(3)
-  res.json({ music: music });
+    const music = new Music_Library({
+      title,
+      artist,
+      genre,
+      image:
+        image ||
+        "https://i.pinimg.com/564x/66/39/19/66391940e99ae6e58a0478b9c23f333d.jpg",
+    });
+
+    await music.save();
+    // --------------------------------(2)
+
+    res.json({ music });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 };
 
 const updateMusic = async (req, res) => {
@@ -75,6 +80,7 @@ const updateMusic = async (req, res) => {
     music.title = title;
     music.artist = artist;
     music.genre = genre;
+    music.image = image || music.image;
 
     await music.save();
 
@@ -96,7 +102,7 @@ const deleteMusic = async (req, res) => {
     // --------------------------------(2)
     const music = await Music_Library.findByIdAndDelete(musicId);
     if (!music) {
-        return res.status(404).json({ message: "Music not found" });
+      return res.status(404).json({ message: "Music not found" });
     }
     // --------------------------------(3)
     res.json({ success: "Record  has been deleted successfully" });

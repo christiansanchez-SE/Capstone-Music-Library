@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { addMusic, getMusic } from "../utility/music-api";
 
-function Playlist() {
+function ExpandLibrary() {
   const [title, setTitle] = useState("");
   const [artist, setArtist] = useState("");
   const [genre, setGenre] = useState("");
@@ -103,4 +103,4 @@ function Playlist() {
   );
 }
 
-export default Playlist;
+export default ExpandLibrary;
