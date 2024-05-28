@@ -2,100 +2,67 @@ import React, { useState, useEffect } from "react";
 import { addMusic, getMusic } from "../utility/music-api";
 
 function Playlist() {
-  const [title, setTitle] = useState("");
-  const [artist, setArtist] = useState("");
-  const [genre, setGenre] = useState("");
-  const [image, setImage] = useState("");
-
-  const handleAdd = async (event) => {
-    event.preventDefault();
-    const musicData = {
-      title,
-      artist,
-      genre: genre.split(",").map((genreItem) => genreItem.trim()),
-      image: image || "https://i.pinimg.com/564x/66/39/19/66391940e99ae6e58a0478b9c23f333d.jpg",
-    };
-    try {
-      await addMusic(musicData);
-      setTitle("");
-      setArtist("");
-      setGenre("");
-      setImage("");
-      getMusic(setMusicLibrary);
-    } catch (error) {
-      console.error('Error adding music:', error);
-    }
-  };
-
+  const [searchTerm, setSearchTerm] = useState("");
   const [musicLibrary, setMusicLibrary] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
     getMusic(setMusicLibrary);
   }, []);
 
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleAddToFavorites = (music) => {
+    if (!favorites.some(favorite => favorite._id === music._id)) {
+      setFavorites([...favorites, music]);
+    }
+  };
+
+  const handleRemoveFromFavorites = (musicToRemove) => {
+    setFavorites(favorites.filter(music => music._id !== musicToRemove._id));
+  };
+
+  const filteredMusic = musicLibrary.filter(music =>
+    music.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    music.artist.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    music.genre.join(", ").toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="playlist">
-      <div className="playlist-form-container">
-        <form action="" method="post" id="playlist-form" onSubmit={handleAdd}>
-          <div id="playlist-form-body">
-            <div id="playlist-welcome-lines">
-              <div id="playlist-welcome-line-1">Welcome</div>
-              <div id="playlist-welcome-line-2">
-                Add music to expand our library
-              </div>
-              <div id="playlist-input-area">
-                <div className="playlist-form-inp">
-                  <input
-                    type="text"
-                    placeholder="Title"
-                    value={title}
-                    onChange={(event) => setTitle(event.target.value)}
-                    required
-                  />
-                </div>
-                <div className="playlist-form-inp">
-                  <input
-                    type="text"
-                    placeholder="Artist"
-                    value={artist}
-                    onChange={(event) => setArtist(event.target.value)}
-                    required
-                  />
-                </div>
-                <div className="playlist-form-inp">
-                  <input
-                    type="text"
-                    placeholder="Genre (comma separated)"
-                    value={genre}
-                    onChange={(event) => setGenre(event.target.value)}
-                    required
-                  />
-                </div>
-                <div className="playlist-form-inp">
-                  <input
-                    type="text"
-                    placeholder="Image URL (optional)"
-                    value={image}
-                    onChange={(event) => setImage(event.target.value)}
-                  />
-                </div>
-                <div id="submit-button-cvr">
-                  <button id="submit-button" type="submit">
-                    Add Music
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
+
+      <div className="playlist-search-container">
+        <input
+          type="text"
+          placeholder="Search Music"
+          value={searchTerm}
+          onChange={handleSearch}
+        />
       </div>
+
       <div className="playlist-main-container">
-        {musicLibrary.map((music, index) => (
+        {filteredMusic.map((music, index) => (
           <div className="playlist-music-library" key={index}>
             <h2>Artist: {music.artist}</h2>
             <h2>{music.title}</h2>
-            <img src={music.image} alt={music.title} className="playlist-musicPicture" />
+            <img src={music.image} alt={music.image} className="playlist-musicPicture" />
             <p>Genre: {music.genre.join(", ")}</p>
+            <button onClick={() => handleAddToFavorites(music)}>Add to Favorites</button>
+          </div>
+        ))}
+      </div>
+
+      <div className="playlist-favorites-container">
+        <h2>Favorites</h2>
+        {favorites.map((music, index) => (
+          <div className="playlist-music-library" key={index}>
+            <h2>Artist: {music.artist}</h2>
+            <h2>{music.title}</h2>
+            <img src={music.image} alt={music.image} className="playlist-musicPicture" />
+            <p>Genre: {music.genre.join(", ")}</p>
+            <button onClick={() => handleRemoveFromFavorites(music)}>Remove from Favorites</button>
           </div>
         ))}
       </div>
