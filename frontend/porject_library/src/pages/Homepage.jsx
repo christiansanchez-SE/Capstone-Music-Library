@@ -14,7 +14,7 @@ function Homepage() {
     if (musicLibrary.length > 0) {
       const interval = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % musicLibrary.length);
-      }, 6000);
+      }, 5000);
 
       return () => clearInterval(interval);
     }
@@ -29,8 +29,9 @@ function Homepage() {
   return (
     <div className="homePage">
       <div className="hompage-container">
+
         <div className="hompage-title">
-          <h1>Music Library</h1>
+          <div className="music-library-title">Music Library</div>
         </div>
 
         <div className="middle-page">
@@ -45,7 +46,7 @@ function Homepage() {
             </div>
 
             <div className="homepage-containerThree">
-              Start Your Music Journey Now
+              Start Your Music Journey Now!
             </div>
 
             <div className="homepage-containerFour">Connect with Us</div>
