@@ -1,128 +1,141 @@
 nav {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    height: 100%;
-    width: 70px;
-    transition: width 0.5s ease;
-  font-family: sans-serif;
+  /* border: solid red; */
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 70px;
+  transition: width 0.5s ease;
+  font-family: "Lucida Console";
+  /* margin: 0.2em; */
+}
 
-} 
-
-a {
-    color: rgb(85, 83, 83);
-    font-size: 14px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start; 
-    text-decoration: none;
-    width: 100%;
-    padding: 10px;
+.nav-link {
+  color: white;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  width: 100%;
+  padding: 10px;
 }
 
 .navBar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: solid dodgerblue;
-    background-color: lightblue;
-    overflow: hidden;
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  /* border: solid dodgerblue; */
+  border-radius: 0px 15px 15px 0px;
+  background-color: #22283196;
+  overflow: hidden;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
 
 .logoContainer {
-    /* border: solid red; */
-    display: flex;
-    align-items: center;
-    text-align: center;
-    /* width: 100%; */
-    transition: all 0.5s ease;
+  /* border: solid red; */
+  display: flex;
+  /* padding: 1em; */
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  /* width: 100%; */
+  transition: all 0.5s ease;
 }
 
 .logo {
-    /* border: solid red; */
-    width: 45px;
-    height: 45px;
-    padding: 0.6em;
+  /* border: solid red; */
+  color: white;
+  width: 45px;
+  height: 45px;
+  padding: 0.6em;
 }
 
 .logoContainer span {
-    /* border: solid black; */
-    font-weight: bold;
-    padding: 1em;
-    font-size: 18px;
-    text-transform: uppercase;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s ease;
+  /* border: solid black; */
+  font-weight: bold;
+  padding: 1em;
+  font-size: 18px;
+  text-transform: uppercase;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s ease;
 }
 
 .navBar-linksContainer {
-    /* border: solid green; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    /* text-align: start; */
-    list-style-type: none;
-    padding: 0.2em;
-    width: auto;
+  /* border: solid green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  /* text-align: start; */
+  list-style-type: none;
+  padding: 0.2em;
+  width: auto;
 }
 
 .navBar-indLinks {
-    /* border: solid blue; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0.2em;
-    margin: 0.2em 0;
-    /* width: 100%; */
-    width: 6em;
+  /* border: solid blue; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.2em;
+  margin: 0.6em 0;
+  width: 100%;
+  width: 6em;
 }
 
-.navBar-Lib, .navBar-myMusic {
-    text-align: center;
-    margin-top: 1em;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s ease;
+.navBar-Lib,
+.navBar-myMusic {
+  /* border: solid red; */
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s ease;
 }
 
 .fas {
-    font-size: 20px;
-    margin-right: 10px; 
+  font-size: 25px;
+  margin-right: 10px;
 }
 
 .navItem {
-    font-size: 14px;
-    visibility: hidden; 
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s ease;
+  font-size: 17px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s ease;
 }
 
-.navItemMenu{
-    font-size: 14px;
-    visibility: hidden; 
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s ease;
+.navItemMenu {
+  /* border: solid red; */
+  /* font-size: 30px; */
+  width: 100%;
+  color: white;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s ease;
 }
 
-a:hover {
-    background: #eee;
+.nav-link:hover {
+  background: #76abae;
+  border-radius: 15px;
+  width: 200px;
 }
 
 nav:hover {
-    width: 280px;
-    transition: all 0.5s ease;
+  width: 280px;
+  transition: all 0.5s ease;
 }
 
-nav:hover .logoContainer span, 
-nav:hover .navItem, 
-nav:hover .navBar-Lib, 
+nav:hover .logoContainer span,
+nav:hover .navItem,
+nav:hover .navBar-Lib,
 nav:hover .navBar-myMusic {
-    visibility: visible; 
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }

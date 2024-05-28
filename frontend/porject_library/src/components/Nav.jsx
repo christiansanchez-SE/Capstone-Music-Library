@@ -23,24 +23,24 @@ function Nav() {
       </div>
       <ul className="navBar-linksContainer">
         <li className="navBar-indLinks">
-          <Link to="/"> <FontAwesomeIcon icon={faHouse} className="fas" /><span className="navItem">Home</span></Link>
+          <Link to="/" className="nav-link"> <FontAwesomeIcon icon={faHouse} className="fas" /><span className="navItem">Home</span></Link>
         </li>
         <li className="navBar-indLinks">
-          <Link to="/AllSongs"> <FontAwesomeIcon icon={faMusic} className="fas"/><span className="navItem">Browse Songs</span></Link>
+          <Link to="/AllSongs" className="nav-link"> <FontAwesomeIcon icon={faMusic} className="fas"/><span className="navItem">Browse Songs</span></Link>
         </li>
         <li className="navBar-indLinks">
-          <Link to="/Artists"> <FontAwesomeIcon icon={faGuitar} className="fas" /><span className="navItem">Artists</span></Link>
+          <Link to="/Artists" className="nav-link"> <FontAwesomeIcon icon={faGuitar} className="fas" /><span className="navItem">Artists</span></Link>
         </li>
       </ul>
       <div className="navBar-myMusic">
-        <h4>My Music</h4>
+        <h3>My Music</h3>
       </div>
       <ul className="navBar-linksContainer">
         <li className="navBar-indLinks">
-          <Link to="/ExpandLibrary"> <FontAwesomeIcon icon={faBook} className="fas"/><span className="navItem">Expand Library</span></Link>
+          <Link to="/ExpandLibrary" className="nav-link"> <FontAwesomeIcon icon={faBook} className="fas"/><span className="navItem">Expand Library</span></Link>
         </li>
         <li className="navBar-indLinks">
-          <Link to="/PLaylist"> <FontAwesomeIcon icon={faListUl} className="fas" /><span className="navItem">Playlist</span></Link>
+          <Link to="/PLaylist" className="nav-link"> <FontAwesomeIcon icon={faListUl} className="fas" /><span className="navItem">Playlist</span></Link>
         </li>
       </ul>
     </nav>

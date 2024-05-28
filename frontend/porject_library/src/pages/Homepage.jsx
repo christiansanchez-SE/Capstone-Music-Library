@@ -46,10 +46,9 @@ function Homepage() {
             </div>
 
             <div className="homepage-containerThree">
-              Start Your Music Journey Now!
+              <Link to="/Playlist" className="homepage-link">Start Your Music Journey Now!</Link>
             </div>
-
-            <div className="homepage-containerFour">Connect with Us</div>
+            {/* <div className="homepage-containerFour">Connect with Us</div> */}
           </div>
 
           <div className="hompage-card">
@@ -72,6 +71,7 @@ function Homepage() {
           </div>
         </div>
       </div>
+
     </div>
   );
 }
