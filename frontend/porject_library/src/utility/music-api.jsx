@@ -39,26 +39,19 @@ export async function addMusic(musicData) {
   }
 }
 
-export async function updateMusic(musicData) {
-  // The try method tries to catch any erros and will console log it as well
+export async function updateMusic(id, musicData) {
   try {
-    // This will fetch the data from the backend folder
-      // This will send a PUT request to the server with new music data to help create update entries 
-    const response = await fetch('http://localhost:3000/musicLibrary', {
+    const response = await fetch(`http://localhost:3000/musicLibrary/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(musicData),
     });
-    // This will parse the respone to get the actual data, await variable is added to make sure the parseing is complete
     const result = await response.json();
-    // Conosle log to see data
     console.log('Music updated:', result);
-    // Will return the results of PUT data
     return result;
   } catch (error) {
-    // If an error occurs it will be caught here and be logged as well
     console.error('Error updating music:', error);
   }
 }

@@ -67,11 +67,13 @@ const updateMusic = async (req, res) => {
 
   try {
     // --------------------------------(1)
-    const musicId = req.params.id;
-    // --------------------------------(2)
-    const { title, artist, genre } = req.body;
 
-    let music = await Music_Library.findByIdAndUpdate(musicId);
+    const musicId = req.params.id;
+    const { title, artist, genre, image } = req.body;
+    // --------------------------------(2)
+
+
+    let music = await Music_Library.findById(musicId);
     if (!music) {
       return res.status(404).json({ message: "Music not found" });
     }
@@ -81,15 +83,13 @@ const updateMusic = async (req, res) => {
     music.artist = artist;
     music.genre = genre;
     music.image = image || music.image;
-
     await music.save();
-
     // --------------------------------(4)
     res.json(music);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
-};
+}
 
 const deleteMusic = async (req, res) => {
   // 1. Get the id off the url

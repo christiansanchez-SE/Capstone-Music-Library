@@ -9,6 +9,7 @@ function ExpandLibrary() {
   const [artist, setMusicArtist] = useState("");
   const [genre, setMusicGenre] = useState("");
   const [image, setMusicImage] = useState("");
+  const [editPhase, setEditPhase] = useState(false)
   const [editID, setEditId] = useState(null);
 
   // - - - - - - - - - - - - - - - - This handles the adding of music - - - - - - - - - - - - - - - - //
@@ -66,17 +67,20 @@ function ExpandLibrary() {
       setMusicGenre("");
       setMusicImage("");
       setEditId(null);
+      editPhase(false)
       getMusic(setMusicLibrary);
     } catch (error) {
       console.error("Error adding music:", error);
     }
   };
+  
   const handleEdit = (music) => {
     setMusicTitle(music.title);
     setMusicArtist(music.artist);
     setMusicGenre(music.genre.join(", "));
     setMusicImage(music.image);
     setEditId(music._id);
+    setEditPhase(true);
   }
 
   // musicLibrary is a state varaible that holds current data
@@ -92,12 +96,11 @@ function ExpandLibrary() {
   return (
     <div className="expand-library">
       <div className="expand-library-form-container">
-        <form action="" method="post" id="expand-library-form" onSubmit={handleAdd}>
+      <form action="" method="post" id="expand-library-form" onSubmit={editPhase ? handleUpdate : handleAdd}>
           <div id="expand-library-form-body">
             <div id="expand-library-welcome-lines">
               <div id="expand-library-welcome-line-1">Welcome</div>
               <div id="expand-library-welcome-line-2">
-                {editID ? "Add music to our library" : "Update music in our library"}
               </div>
               <div id="expand-library-input-area">
                 <div className="expand-library-form-inp">
@@ -149,6 +152,7 @@ function ExpandLibrary() {
             </div>
           </div>
         </form>
+      
       </div>
 
       <div className="expand-library-main-container">
