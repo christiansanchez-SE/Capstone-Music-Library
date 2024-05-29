@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// importing api from the music-api
 import { getMusic } from "../utility/music-api";
 import { Link } from "react-router-dom";
 
@@ -70,12 +71,13 @@ function Homepage() {
 
           <div className="hompage-card">
             <div className="homepage-music-library">
+              {/* Helps map through the music library and displays the content*/}
               {musicLibrary.map((music, index) => (
                 <img
                   key={index}
                   src={music.image}
                   alt={music.artist}
-                  // If index matches the currentMusicLib we add the show class
+                  // If index matches the currentMusicLib we add the show className on top of musicPicture
                   className={
                     "musicPicture " + (index === currentMusicLib ? "show" : "")
                   }

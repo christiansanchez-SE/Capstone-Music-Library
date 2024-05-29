@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// importing api from the music-api
 import { getMusic } from "../utility/music-api";
 // import { Link } from "react-router-dom";
 
@@ -19,11 +20,16 @@ function AllSongs() {
         <h1>Music Library</h1>
       </div>
       <div className="allSongs-main-container">
+
+        {/* Helps map through the music library, having music as the current item in the array and index is the current position of the item */}
         {musicLibrary.map((music, index) => (
+          // For each music item it creates a div with the key=index value
           <div className="allSongs-music-library" key={index}>
+            {/* music.image will display the image */}
             <img src={music.image} alt={music.image} className="allSongs-musicPicture" />
             <h2>{music.title}</h2>
             <p>Artist: {music.artist}</p>
+            {/* will help genre be joined by a space and a comma */}
             <p>Genre: {music.genre.join(", ")}</p>
           </div>
         ))}

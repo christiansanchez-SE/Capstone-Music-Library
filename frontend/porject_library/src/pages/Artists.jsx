@@ -17,9 +17,12 @@ function Artists() {
       <h1>Artists Page</h1>
       </div>
       <div className="artist-main-container">
+        {/* Helps map through the music library, having music as the current item in the array and index is the current position of the item */}
       {musicLibrary.map((music, index) => (
+          // For each music item it creates a div with the key=index value
           <div className="artist-music-library" key={index}>
             <h2>Artist: {music.artist}</h2>
+            {/* music.image will display the image */}
             <img src={music.image} alt={music.image} className="artist-musicPicture"/>
           </div>
         ))}

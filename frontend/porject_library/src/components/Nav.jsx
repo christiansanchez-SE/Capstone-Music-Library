@@ -1,8 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
+// Importing data from fontawesome so the Icons could be used
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBook, faHouse, faGuitar, faHeart, faListUl, faMusic, faBars } from '@fortawesome/free-solid-svg-icons';
 
+
+// Allows for fonts to be used
 const elementOne = <FontAwesomeIcon icon={faHouse} />;
 const elementTwo = <FontAwesomeIcon icon={faMusic} />;
 const elementThree = <FontAwesomeIcon icon={faGuitar} />;
