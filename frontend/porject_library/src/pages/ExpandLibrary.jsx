@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// importing api from the music-api
+// importing api and specified functions from the music-api
 import {
   addMusic,
   getMusic,
@@ -8,23 +8,26 @@ import {
 } from "../utility/music-api";
 
 function ExpandLibrary() {
-  // All valuse below holds the input values for the new music that will be added
+  // All valuse below holds the state variables and setter functions values for the new music that will be added or edited
   // The set variables helps update the data
   const [title, setMusicTitle] = useState("");
   const [artist, setMusicArtist] = useState("");
   const [genre, setMusicGenre] = useState("");
   const [image, setMusicImage] = useState("");
 
-  // Using for editing
+  // Using for editing when placed into editing mode
+    // The editPhase is a variable that will help determine when the form is in editing mode
+    // editID holds the ID that will be used for edit, its set to null so if user isnt editing anything it will remain null, otherwise it will hold the ID of the music waiting to be edited
   const [editPhase, setEditPhase] = useState(false);
   const [editID, setEditId] = useState(null);
 
   // - - - - - - - - - - - - - - - - This handles the adding of music - - - - - - - - - - - - - - - - //
   const handleAdd = async (event) => {
     // Will stop the page from reloading when the change happens
+    // It gets called when user submits form
     event.preventDefault();
 
-    // Contains the new music form by adding the title, artist, genre, and images
+    // Preps the new music form by adding the title, artist, genre, and images
     // For each submission of genre, .split methods splits genre and turns it into a new array
     // Will map through each genreItem and trims any excess space
     // For each submission of image it will add the new image that user provides if there isnt one the default image gets added
@@ -38,6 +41,7 @@ function ExpandLibrary() {
     };
 
     // addMusic will call on the mongoDB Api to add the new music
+    // When successful the resetsForm will reset the input values that was made from the user
     // getMusic refreshes the page after data is added
     try {
       await addMusic(musicData);
@@ -51,8 +55,13 @@ function ExpandLibrary() {
   // - - - - - - - - - - - - - - - - This handles the updating of music - - - - - - - - - - - - - - - - //
   const handleUpdate = async (event) => {
     // Will stop the page from reloading when the change happens
+    // It gets called when user submits form
     event.preventDefault();
 
+    // Contains the music form by editing the title, artist, genre, and images
+    // For each submission of genre, .split methods splits genre and turns it into a new array
+    // Will map through each genreItem and trims any excess space
+    // For each submission of image it will edit the new image that user provides if there isnt one the default image gets added
     const musicData = {
       title,
       artist,
@@ -62,7 +71,9 @@ function ExpandLibrary() {
         "https://i.pinimg.com/564x/66/39/19/66391940e99ae6e58a0478b9c23f333d.jpg",
     };
 
-    // addMusic will call on the mongoDB Api to add the new music
+    // updateMusic will call on the mongoDB Api to add the edit music by there id
+    // When successful the resetsForm will reset the input values that was made from the user
+    // If theres no edits happening the editID will remain null and the editing phase will be set to false
     // getMusic refreshes the page after data is added
     try {
       await updateMusic(editID, musicData);
@@ -78,6 +89,8 @@ function ExpandLibrary() {
   };
 
   const handleEdit = (music) => {
+    // Sets the form inputs to the values of the selected item
+    // Sets the editID to the selected item and turns editPhase to true
     setMusicTitle(music.title);
     setMusicArtist(music.artist);
     setMusicGenre(music.genre.join(", "));
@@ -89,7 +102,10 @@ function ExpandLibrary() {
   // - - - - - - - - - - - - - - - - This handles the deleting of music - - - - - - - - - - - - - - - - //
   const handleDelete = async (music) => {
     try {
+      // Calls on the deleteMusic function passing on the id of the music to be deleted
       await deleteMusic(music._id);
+
+      // 
       setMusicLibrary((previousMusicLibrary) =>
         previousMusicLibrary.filter((item) => item._id !== music._id)
       );
@@ -123,6 +139,7 @@ function ExpandLibrary() {
           action=""
           method="post"
           id="expand-library-form"
+          // onSubmit got put into a ternary for editing purposes, once the edit button is clicked the form turns into edit phase. If its not it will remain in adding phase
           onSubmit={editPhase ? handleUpdate : handleAdd}
         >
           <div id="expand-library-form-body">
