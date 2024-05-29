@@ -3,13 +3,16 @@ import React, { useState, useEffect } from "react";
 import { addMusic, getMusic } from "../utility/music-api";
 
 function Playlist() {
+
   // Will be used to hold and store the searched music entered by the user
     // This hook iniatlizes searchMusic with an empty string and then will be updated with setSearchMusic
   const [searchMusic, setSearchMusic] = useState("");
+
   // musicLibrary holds the array of music data fetched from the backend
     // The useState starts off with an empty array, meaning it will start of with no music data
       // setMusicLibrary is a function to update the musicLibrary
   const [musicLibrary, setMusicLibrary] = useState([]);
+  
   // This will be used to hold the favroites of the users selected options
     // The useState starts off with an empty array, meaning it will start of with no favorited music data
       // setFavorites will update the favorites array, this will occur when the user adds it to the list
