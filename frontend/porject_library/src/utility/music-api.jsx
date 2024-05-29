@@ -55,3 +55,20 @@ export async function updateMusic(id, musicData) {
     console.error('Error updating music:', error);
   }
 }
+
+export async function deleteMusic(id, musicData) {
+  try {
+    const response = await fetch(`http://localhost:3000/musicLibrary/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(musicData),
+    });
+    const result = await response.json();
+    console.log('Music deleted:', result);
+    return result;
+  } catch (error) {
+    console.error('Error deleting music:', error);
+  }
+}

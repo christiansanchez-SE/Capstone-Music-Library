@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 // importing api from the music-api
-import { addMusic, getMusic, updateMusic } from "../utility/music-api";
+import {
+  addMusic,
+  getMusic,
+  updateMusic,
+  deleteMusic,
+} from "../utility/music-api";
 
 function ExpandLibrary() {
   // All valuse below holds the input values for the new music that will be added
@@ -9,7 +14,9 @@ function ExpandLibrary() {
   const [artist, setMusicArtist] = useState("");
   const [genre, setMusicGenre] = useState("");
   const [image, setMusicImage] = useState("");
-  const [editPhase, setEditPhase] = useState(false)
+
+  // Using for editing
+  const [editPhase, setEditPhase] = useState(false);
   const [editID, setEditId] = useState(null);
 
   // - - - - - - - - - - - - - - - - This handles the adding of music - - - - - - - - - - - - - - - - //
@@ -34,10 +41,7 @@ function ExpandLibrary() {
     // getMusic refreshes the page after data is added
     try {
       await addMusic(musicData);
-      setMusicTitle("");
-      setMusicArtist("");
-      setMusicGenre("");
-      setMusicImage("");
+      resetsForm();
       getMusic(setMusicLibrary);
     } catch (error) {
       console.error("Error adding music:", error);
@@ -62,18 +66,17 @@ function ExpandLibrary() {
     // getMusic refreshes the page after data is added
     try {
       await updateMusic(editID, musicData);
-      setMusicTitle("");
-      setMusicArtist("");
-      setMusicGenre("");
-      setMusicImage("");
+      resetsForm();
       setEditId(null);
-      editPhase(false)
+      setEditPhase(false);
+
+      // getMusic refreshes the page after data is added
       getMusic(setMusicLibrary);
     } catch (error) {
-      console.error("Error adding music:", error);
+      console.error("Error updating music:", error);
     }
   };
-  
+
   const handleEdit = (music) => {
     setMusicTitle(music.title);
     setMusicArtist(music.artist);
@@ -81,7 +84,27 @@ function ExpandLibrary() {
     setMusicImage(music.image);
     setEditId(music._id);
     setEditPhase(true);
-  }
+  };
+
+  // - - - - - - - - - - - - - - - - This handles the deleting of music - - - - - - - - - - - - - - - - //
+  const handleDelete = async (music) => {
+    try {
+      await deleteMusic(music._id);
+      setMusicLibrary((previousMusicLibrary) =>
+        previousMusicLibrary.filter((item) => item._id !== music._id)
+      );
+    } catch (error) {
+      console.log("Error deleting music:", error);
+    }
+  };
+
+  //This helps resets the form
+  const resetsForm = () => {
+    setMusicTitle("");
+    setMusicArtist("");
+    setMusicGenre("");
+    setMusicImage("");
+  };
 
   // musicLibrary is a state varaible that holds current data
   // setMusicLibrary helps upadte musicLibrary state
@@ -96,12 +119,16 @@ function ExpandLibrary() {
   return (
     <div className="expand-library">
       <div className="expand-library-form-container">
-      <form action="" method="post" id="expand-library-form" onSubmit={editPhase ? handleUpdate : handleAdd}>
+        <form
+          action=""
+          method="post"
+          id="expand-library-form"
+          onSubmit={editPhase ? handleUpdate : handleAdd}
+        >
           <div id="expand-library-form-body">
             <div id="expand-library-welcome-lines">
               <div id="expand-library-welcome-line-1">Welcome</div>
-              <div id="expand-library-welcome-line-2">
-              </div>
+              <div id="expand-library-welcome-line-2"></div>
               <div id="expand-library-input-area">
                 <div className="expand-library-form-inp">
                   {/* Value gets set to the state variable, the onChange event updates the state variable with the current value of the input field whenever its typed into the field */}
@@ -152,7 +179,6 @@ function ExpandLibrary() {
             </div>
           </div>
         </form>
-      
       </div>
 
       <div className="expand-library-main-container">
@@ -169,6 +195,7 @@ function ExpandLibrary() {
             {/* will help genre be joined by a space and a comma */}
             <p>Genre: {music.genre.join(", ")}</p>
             <button onClick={() => handleEdit(music)}>Edit</button>
+            <button onClick={() => handleDelete(music)}>Delete</button>
           </div>
         ))}
       </div>
