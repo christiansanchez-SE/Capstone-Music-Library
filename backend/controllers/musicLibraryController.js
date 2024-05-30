@@ -5,6 +5,11 @@ const fetchAllMusic = async (req, res) => {
     // 1. Get all music library from mongoDB
     const music = await Music_Library.find();
     // 2. Send the music library back as a response
+
+    // Will send error message
+    if (!music) {
+      return res.status(404).json({ message: "Music not found" });
+    }
     res.json({ music });
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -22,6 +27,7 @@ const fetchMusic = async (req, res) => {
     // --------------------------------(2)
     const music = await Music_Library.findById(musicId);
 
+    // Will send error message
     if (!music) {
       return res.status(404).json({ message: "Music not found" });
     }
@@ -74,6 +80,8 @@ const updateMusic = async (req, res) => {
 
 
     let music = await Music_Library.findById(musicId);
+
+    // Will send error message
     if (!music) {
       return res.status(404).json({ message: "Music not found" });
     }
@@ -101,11 +109,12 @@ const deleteMusic = async (req, res) => {
     const musicId = req.params.id;
     // --------------------------------(2)
     const music = await Music_Library.findByIdAndDelete(musicId);
+    // Will send error message
     if (!music) {
       return res.status(404).json({ message: "Music not found" });
     }
     // --------------------------------(3)
-    res.json({ success: "Record  has been deleted successfully" });
+    res.json({ success: "Record has been deleted successfully" });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
