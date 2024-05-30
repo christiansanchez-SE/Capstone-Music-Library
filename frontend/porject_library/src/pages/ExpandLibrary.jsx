@@ -219,6 +219,7 @@ function ExpandLibrary() {
             </div>
 
             <div className="expand-library-btn-container">
+              {/* Once handleEdit function gets called it fills the form with the muisc user wants to edit */}
             <button className="expand-library-btn" onClick={() => handleEdit(music)}>Edit</button>
             <button className="expand-library-btn" onClick={() => handleDelete(music)}>Delete</button>
             </div>

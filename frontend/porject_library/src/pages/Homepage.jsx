@@ -4,6 +4,7 @@ import { getMusic } from "../utility/music-api";
 import { Link } from "react-router-dom";
 
 function Homepage() {
+  
   // Initalizing state variable using musicLibrary, with an empty array
   // setMusicLibrary function is used to update the state (empty array)
   const [musicLibrary, setMusicLibrary] = useState([]);
