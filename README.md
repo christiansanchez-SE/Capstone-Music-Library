@@ -14,7 +14,13 @@ This application features both a backend and a frontend, both linked together to
 - **Vite-React**: The frontend is built using Vite-React.
 - **State Management**: useState is used to manage the state of various components.
 - **Side Effects**: useEffect is used to fetch data from the backend when the components mounts and to update the state.
-- 
+
+## Key Operations
+- **Create**: Users can add new music entries by filling out a form with the title, artist, genre, and an optional image URL. The data is then sent to the backend and stored in MongoDB.
+- **Read**: Music entries are fetched from the database and displayed in a list. Users can also search for specific music by title, artist, or genre.
+- **Update**: Users can edit existing music entries. The updated data is sent to the backend to update the database.
+- **Delete**: Users can delete music entries from the library. The deletion request is sent to the backend, which removes the entry from the database.
+
 ## Features
 - **Add Music**: Users can add new music entries including title, artist, genre, and image.
 - **View Music**: Users can view the list of music entries in the library.
