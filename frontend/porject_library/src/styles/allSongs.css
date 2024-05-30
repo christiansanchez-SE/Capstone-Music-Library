@@ -21,6 +21,7 @@
   align-items: center;
   padding: 1em;
   margin: 1em;
+  box-shadow: 10px 10px 25px #0b1214;
   height: auto;
       /* This is the background image */
       --size: 200px;
@@ -42,7 +43,7 @@
 }
 
 .allSongs-musicPicture {
-  border: solid gray;
+  /* border: solid gray; */
   border-radius: 15px;
   height: 200px;
   width: 200px;
@@ -63,6 +64,7 @@
   align-items: center;
   gap: 20px;
   padding: 20px;
+  box-shadow: 10px 10px 25px #0b1214;
   margin: 1em;
 }
 
@@ -82,5 +84,5 @@
   text-align: center;
   border-radius: 30px;
   background: #31363f;
-  box-shadow: 10px 10px 25px #7ec8e3, -10px -10px 25px #253a42;
+  box-shadow: 10px 10px 25px #457283, -10px -10px 25px #253a42;
 }

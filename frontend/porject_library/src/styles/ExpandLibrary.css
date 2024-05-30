@@ -17,6 +17,7 @@
   align-items: center;
   padding: 2em;
   margin: 3em;
+  box-shadow: 10px 10px 25px #0b1214;
   height: auto;
     /* This is the background image */
   --size: 200px;
@@ -44,7 +45,7 @@
   height: 472px;
   padding: 25px;
   background-color: #31363f;
-  box-shadow: 0px 15px 60px #7ec8e3;
+  box-shadow: 10px 10px 25px #7ec8e3;
   outline: 1px solid #7ec8e3;
   border-radius: 10px;
 }
@@ -145,6 +146,7 @@
   gap: 20px;
   padding: 20px;
   margin: 1em;
+  box-shadow: 10px 10px 25px #0b1214;
 }
 
 .expand-library-music-library {
@@ -163,7 +165,7 @@
   text-align: center;
   border-radius: 30px;
   background: #31363f;
-  box-shadow: 10px 10px 25px #7ec8e3, -10px -10px 25px #253a42;
+  box-shadow: 10px 10px 25px #457283, -10px -10px 25px #253a42;
 }
 
 .expand-library-content{
