@@ -1,139 +1,143 @@
 .playlist {
-  border: solid dodgerblue;
+  /* border: solid dodgerblue; */
+  font-family: "Lucida Console";
   text-align: center;
-  background-color: #f7f7f7;
-  font-family: sans-serif;
+  background-color: #262a31;
   height: auto;
-}
-
-.playlist-form-container {
-  border: solid black;
-  height: 75vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#playlist-form {
-  display: grid;
-  place-items: center;
-  width: 300px;
-  height: 472px;
-  padding: 25px;
-  background-color: #161616;
-  box-shadow: 0px 15px 60px #00ff7f;
-  outline: 1px solid #2b9962;
-  border-radius: 10px;
-}
-
-#playlist-form-body {
-  width: 230px;
-}
-
-#playlist-welcome-lines {
-  text-align: center;
-  line-height: 1;
-}
-
-#playlist-welcome-line-1 {
-  color: #00ff7f;
-  font-weight: 600;
-  font-size: 40px;
-}
-
-#playlist-welcome-line-2 {
-  color: #ffffff;
-  font-size: 18px;
-  margin-top: 17px;
-}
-
-#playlist-input-area {
-  margin-top: 1em;
-}
-
-.playlist-form-inp {
-  padding: 11px 25px;
-  background: transparent;
-  border: 1px solid #e3e3e3;
-  line-height: 1;
-  border-radius: 8px;
-  margin-top: 1em;
-}
-
-.playlist-form-inp:focus {
-  border: 1px solid #00ff7f;
-}
-
-.playlist-form-inp:first-child {
-  margin-bottom: 15px;
-}
-
-.playlist-form-inp input {
+  flex-direction: column;
   width: 100%;
-  background: none;
-  font-size: 13.4px;
-  color: #00ff7f;
-  border: none;
-  padding: 0;
-  margin: 0;
 }
 
-.playlist-form-inp input:focus {
-  outline: none;
-}
-
-#submit-button-cvr {
-  margin-top: 20px;
-}
-
-#submit-button {
-  display: block;
-  width: 100%;
-  color: #00ff7f;
-  background-color: transparent;
-  font-weight: 600;
-  font-size: 14px;
-  margin: 0;
-  padding: 14px 13px 12px 13px;
-  border: 0;
-  outline: 1px solid #00ff7f;
-  border-radius: 8px;
-  line-height: 1;
-  cursor: pointer;
-  transition: all ease-in-out 0.3s;
-}
-
-#submit-button:hover {
-  transition: all ease-in-out 0.3s;
-  background-color: #00ff7f;
-  color: #161616;
-  cursor: pointer;
+.playlist-search-container{
+    /* border: solid black; */
+    border-radius: 15px;
+    /* height: 75vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    margin: 3em;
+    height: auto;
+    /* This is the background image */
+    --size: 200px;
+    --color1: #76ABAE;
+    --color2: #31363F;
+    --color3: #7ec8e3;
+    --cone: #31363F;
+  
+    background: radial-gradient(
+        circle at 50% 30%,
+        transparent 30%,
+        var(--color1) 31%
+      ),
+      radial-gradient(circle at 30% 70%, transparent 30%, var(--color2) 31%),
+      radial-gradient(circle at 70% 70%, transparent 30%, var(--color3) 31%),
+      linear-gradient(to bottom, var(--cone) 50%, transparent 50%);
+    background-size: var(--size) var(--size);
+    animation: move 20s linear infinite;
 }
 
 .playlist-main-container {
-    border: solid black;
-    height: auto; 
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: space-evenly; 
-    align-items: center; 
-    gap: 20px; 
-    padding: 20px; 
+  font-family: "Lucida Console";
+  background-color: #253a4254;
+  border-radius: 15px;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  margin: 1em;
   }
   
   .playlist-music-library {
-    border: solid blue;
-    height: 400px; 
-    width: 100%; 
-    max-width: 300px; 
-    padding: 20px; 
-    text-align: center; 
-    flex: 1 1 300px; 
+    /* border: solid blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    height: auto;
+    min-height: 470px;
+    width: 100%;
+    max-width: 300px;
+    padding: 1em;
+    margin: 2em;
+    text-align: center;
+    border-radius: 30px;
+    background: #31363f;
+    box-shadow: 10px 10px 25px #7ec8e3, -10px -10px 25px #253a42;
   }
   
   .playlist-musicPicture {
+    border-radius: 15px;
     height: 200px; 
     width: 200px; 
     object-fit: cover; 
   }
+  .playlist-fav-title{
+    font-family: "Lucida Console";
+    color: white;
+    background-color: #253a4254;
+    border-radius: 15px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin: 1em;
+  }
+
+  .playlist-favorites-container{
+    font-family: "Lucida Console";
+    color: white;
+    background-color: #253a4254;
+    border-radius: 15px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin: 1em;
+  }
+
+  .playlist-btn {
+  font-family: "Lucida Console";
+  margin: 1em;
+  color: #090909;
+  padding: 0.2em 0.7em;
+  font-size: 15px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  cursor: pointer;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s;
+  box-shadow: 1px 1px 4px #c5c5c5, 1px 1px 4px #ffffff;
+}
+.playlist-btn:hover {
+  border: 1px solid white;
+}
+.playlist-btn:active {
+  box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+}
   
+.playlist-searchbar{
+  border: none;
+  width: 300px;
+  padding: 1.3em;
+  border-radius: 1.2em;
+  background: #e8e8e8;
+  transition: 0.3s;
+}
+
+.playlist-searchbar:focus {
+  outline-color: #e8e8e8;
+  background: #e8e8e8;
+  transition: 0.3s;
+ }

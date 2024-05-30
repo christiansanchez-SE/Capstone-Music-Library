@@ -21,7 +21,7 @@ function Artists() {
       {musicLibrary.map((music, index) => (
           // For each music item it creates a div with the key=index value
           <div className="artist-music-library" key={index}>
-            <h2>Artist: {music.artist}</h2>
+            <p><strong>Artist: </strong>{music.artist}</p>
             {/* music.image will display the image */}
             <img src={music.image} alt={music.image} className="artist-musicPicture"/>
           </div>

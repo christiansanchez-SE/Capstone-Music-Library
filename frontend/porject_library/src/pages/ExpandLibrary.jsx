@@ -16,8 +16,8 @@ function ExpandLibrary() {
   const [image, setMusicImage] = useState("");
 
   // Using for editing when placed into editing mode
-    // The editPhase is a variable that will help determine when the form is in editing mode
-    // editID holds the ID that will be used for edit, its set to null so if user isnt editing anything it will remain null, otherwise it will hold the ID of the music waiting to be edited
+  // The editPhase is a variable that will help determine when the form is in editing mode
+  // editID holds the ID that will be used for edit, its set to null so if user isnt editing anything it will remain null, otherwise it will hold the ID of the music waiting to be edited
   const [editPhase, setEditPhase] = useState(false);
   const [editID, setEditId] = useState(null);
 
@@ -105,7 +105,7 @@ function ExpandLibrary() {
       // Calls on the deleteMusic function passing on the id of the music to be deleted
       await deleteMusic(music._id);
 
-      // 
+      // Updates the musicLibrary state by removing the deleted music fromt the list
       setMusicLibrary((previousMusicLibrary) =>
         previousMusicLibrary.filter((item) => item._id !== music._id)
       );
@@ -122,14 +122,17 @@ function ExpandLibrary() {
     setMusicImage("");
   };
 
-  // musicLibrary is a state varaible that holds current data
-  // setMusicLibrary helps upadte musicLibrary state
+  // musicLibrary is a state varaible with an empty array that holds current data
+  // setMusicLibrary helps update musicLibrary state
   const [musicLibrary, setMusicLibrary] = useState([]);
 
-  // getMusic is called, which is an async function defined in "music-api.jsx"
-  // setMusicLibrary is passed to "getMusic" so it can update the state once the data is fetched
+  // - - - - - - - - - - - - - - - useEffect - - - - - - - - - - - - - - - //
+  // This effect runs when the component is first displayed and it will fetch the music data from the api and updates
   useEffect(() => {
+    // getMusic is called, which is an async function defined in "music-api.jsx"
+    // setMusicLibrary is passed to "getMusic" so it can update the state once the data is fetched
     getMusic(setMusicLibrary);
+    // The empty array is the second argument, which will run once when components mount
   }, []);
 
   return (
@@ -145,7 +148,7 @@ function ExpandLibrary() {
           <div id="expand-library-form-body">
             <div id="expand-library-welcome-lines">
               <div id="expand-library-welcome-line-1">Welcome</div>
-              <div id="expand-library-welcome-line-2"></div>
+              <div id="expand-library-welcome-line-2">{ editPhase ? "Update our music library" : "Add to our music library" }</div>
               <div id="expand-library-input-area">
                 <div className="expand-library-form-inp">
                   {/* Value gets set to the state variable, the onChange event updates the state variable with the current value of the input field whenever its typed into the field */}
@@ -187,8 +190,8 @@ function ExpandLibrary() {
                     onChange={(event) => setMusicImage(event.target.value)}
                   />
                 </div>
-                <div id="submit-button-cvr">
-                  <button id="submit-button" type="submit">
+                <div id="expand-library-submit-button-cvr">
+                  <button id="expand-library-submit-button" type="submit">
                     {editID ? "Update Music" : "Add Music"}
                   </button>
                 </div>
@@ -199,20 +202,26 @@ function ExpandLibrary() {
       </div>
 
       <div className="expand-library-main-container">
-        {/* Helps map through the music library and displays the content*/}
+        {/* Map helps map through the music library and creates a new div to show the music, music being the current item in the array and index being the position */}
         {musicLibrary.map((music, index) => (
+          // the key index is a unique identfier for each item
           <div className="expand-library-music-library" key={index}>
+            <div className="expand-library-content">
             <h2>Artist: {music.artist}</h2>
-            <h2>{music.title}</h2>
+            <h2>Song: {music.title}</h2>
             <img
               src={music.image}
               alt={music.title}
               className="expand-library-musicPicture"
             />
             {/* will help genre be joined by a space and a comma */}
-            <p>Genre: {music.genre.join(", ")}</p>
-            <button onClick={() => handleEdit(music)}>Edit</button>
-            <button onClick={() => handleDelete(music)}>Delete</button>
+            <p className="expand-library-genre">Genre: {music.genre.join(", ")}</p>
+            </div>
+
+            <div className="expand-library-btn-container">
+            <button className="expand-library-btn" onClick={() => handleEdit(music)}>Edit</button>
+            <button className="expand-library-btn" onClick={() => handleDelete(music)}>Delete</button>
+            </div>
           </div>
         ))}
       </div>

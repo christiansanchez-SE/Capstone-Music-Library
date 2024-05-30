@@ -28,9 +28,9 @@ function AllSongs() {
             {/* music.image will display the image */}
             <img src={music.image} alt={music.image} className="allSongs-musicPicture" />
             <h2>{music.title}</h2>
-            <p>Artist: {music.artist}</p>
+            <p><strong>Artist: </strong>{music.artist}</p>
             {/* will help genre be joined by a space and a comma */}
-            <p>Genre: {music.genre.join(", ")}</p>
+            <p><strong>Genre: </strong>{music.genre.join(", ")}</p>
           </div>
         ))}
       </div>

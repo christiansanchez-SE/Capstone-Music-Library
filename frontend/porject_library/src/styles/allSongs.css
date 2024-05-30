@@ -1,37 +1,86 @@
 .allSongs {
-    border: solid dodgerblue;
-    text-align: center;
-    background-color: #f7f7f7;
-    font-family: sans-serif;
-  }
-  
-  .allSongs-main-page-title{
-    border: solid red;
-    text-align: center;
-    margin: 1em;
-    padding: 1em;
-  }
-  
-  .allSongs-musicPicture{
-    border: solid gray;
-    border-radius: 15px;
-    height: 200px;
-    width: 200px;
-    text-align: center;
-    margin: 1em;
-  }
-  
-  .allSongs-main-page-title{
-    border: solid green;
-    text-align: center;
-    padding: 1em;
-    margin: 1em;
-  }
-  
-  .allSongs-main-container{
-    border: solid black;
-    text-align: center;
-    padding: 1em;
-    margin: 1em;
-  }
-  
+  /* border: solid dodgerblue; */
+  font-family: "Lucida Console";
+  text-align: center;
+  background-color: #262a31;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.allSongs-main-page-title {
+  /* border: solid green; */
+  border-radius: 15px;
+  color: white;
+  font-size: 35px;
+  letter-spacing: 15px;
+  text-shadow: 2px 2px 5px #76ABAE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  margin: 1em;
+  height: auto;
+      /* This is the background image */
+      --size: 200px;
+      --color1: #76ABAE;
+      --color2: #31363F;
+      --color3: #7ec8e3;
+      --cone: #31363F;
+    
+      background: radial-gradient(
+          circle at 50% 30%,
+          transparent 30%,
+          var(--color1) 31%
+        ),
+        radial-gradient(circle at 30% 70%, transparent 30%, var(--color2) 31%),
+        radial-gradient(circle at 70% 70%, transparent 30%, var(--color3) 31%),
+        linear-gradient(to bottom, var(--cone) 50%, transparent 50%);
+      background-size: var(--size) var(--size);
+      animation: move 20s linear infinite;
+}
+
+.allSongs-musicPicture {
+  border: solid gray;
+  border-radius: 15px;
+  height: 200px;
+  width: 200px;
+  object-fit: cover; 
+  text-align: center;
+  margin: 1em;
+}
+
+.allSongs-main-container {
+  /* border: solid black; */
+  font-family: "Lucida Console";
+  background-color: #253a4254;
+  border-radius: 15px;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  margin: 1em;
+}
+
+.allSongs-music-library {
+  /* border: solid blue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  height: auto;
+  min-height: 470px;
+  width: 100%;
+  max-width: 300px;
+  padding: 3em;
+  margin: 1em;
+  text-align: center;
+  border-radius: 30px;
+  background: #31363f;
+  box-shadow: 10px 10px 25px #7ec8e3, -10px -10px 25px #253a42;
+}
