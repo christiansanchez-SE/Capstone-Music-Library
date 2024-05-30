@@ -10,3 +10,8 @@ This application is an interactive music library where users can get, create, ed
 - **Delete Music**: Users can delete music entries from the library.
 - **Search Functionality**: Users can search for music by title, artist, or genre.
 - **Favorites**: Users can add music to their favorites list.
+
+## Additionals
+- **Navbar**: The navbar is interactive and is able to expand once hover over it.
+- **Carousel**: At the homepage there is a carousel effect set on a timer that will change artist, song, and picture every 5 seconds.
+- **Background Image**: The background iamge is set on a animation that moves to give it the effect of it being never ending.
