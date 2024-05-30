@@ -33,3 +33,9 @@ This application features both a backend and a frontend, both linked together to
 - **Navbar**: The navbar is interactive and expands upon hovering, providing a smooth browsing experience.
 - **Carousel**: The homepage features a carousel effect set on a timer that will change artist, song, and picture every 5 seconds.
 - **Background Image**: The background image is set on a animation that moves to give it the effect of it being never ending.
+
+## Challenges
+- **Edit**: The edit feature was a little challenging for me, figuring out a clean and precise way for the user use the edit function. 
+
+## Future Edits
+- **Login & Sign Up**: I want to create a login and sign up feature so users could make there own playlist.
