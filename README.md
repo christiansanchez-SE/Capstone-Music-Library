@@ -74,4 +74,4 @@ This application features both a backend and a frontend, both linked together to
 - CSS3
 - JavaScript
 - Vite & React
-- Netlify & Render(for deployment) 
+- Netlify & Render (for deployment) 
