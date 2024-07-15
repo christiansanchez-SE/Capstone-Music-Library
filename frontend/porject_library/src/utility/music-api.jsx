@@ -2,7 +2,7 @@ export async function getMusic(setState) {
   // The try method tries to catch any erros and will console log it as well
   try {
     // This will fetch the data from the backend folder
-    const response = await fetch('https://capstone-music-library.onrender.com');
+    const response = await fetch('https://capstone-music-library.onrender.com/musicLibrary');
     // This will parse the respone to get the actual data, await variable is added to make sure the parseing is complete
     const data = await response.json();
     // Will update the state with the music data that was aquired by the backend
@@ -20,7 +20,7 @@ export async function addMusic(musicData) {
   try {
     // This will fetch the data from the backend folder
       // This will send a POST request to the server with new music data to help create new entries 
-    const response = await fetch('https://capstone-music-library.onrender.com', {
+    const response = await fetch('https://capstone-music-library.onrender.com/musicLibrary', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ export async function addMusic(musicData) {
 
 export async function updateMusic(id, musicData) {
   try {
-    const response = await fetch(`https://capstone-music-library.onrender.com/${id}`, {
+    const response = await fetch(`https://capstone-music-library.onrender.com/musicLibrary/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ export async function updateMusic(id, musicData) {
 
 export async function deleteMusic(id, musicData) {
   try {
-    const response = await fetch(`https://capstone-music-library.onrender.com/${id}`, {
+    const response = await fetch(`https://capstone-music-library.onrender.com/musicLibrary/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
