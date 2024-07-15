@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "proxy": "http://localhost:3000",
+  "proxy": "https://capstone-music-library.onrender.com",
   "scripts": {
     "start": "vite",
     "build": "vite build",
