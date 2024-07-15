@@ -1,7 +1,7 @@
 # Music Library Capstone Project
 
 ## Overview
-This application is an interactive music library where users can get, create, edit, and delete music entries from the library. The project showcases basic CRUD (Create, Read, Update, Delete) operations with a user-friendly interface.
+This application is an interactive music library where users can get, create, edit, and delete music entries from the library. The project showcases basic CRUD (Create, Read, Update, Delete) operations with a user-friendly interface. The loading of the page might take a little to render. 
 
 ## Web Images
 ![Music Library Image One](https://github.com/user-attachments/assets/9e6fd4ea-b72d-4833-81ae-62d080fcc316)
