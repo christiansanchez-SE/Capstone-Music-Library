@@ -5,9 +5,13 @@ This application is an interactive music library where users can get, create, ed
 
 ## Web Images
 ![Music Library Image One](https://github.com/user-attachments/assets/9e6fd4ea-b72d-4833-81ae-62d080fcc316)
+
 ![Music Library Image Two](https://github.com/user-attachments/assets/aff54de1-8bbb-47ee-a903-b1eabcdf410e)
+
 ![Music Library Image Three](https://github.com/user-attachments/assets/4d711960-918f-42c0-b975-0c89a87eaa37)
+
 ![Music Library Image Four](https://github.com/user-attachments/assets/40c6fb6a-c032-452e-9a67-99725ddc9337)
+
 ![Music Library Image Five](https://github.com/user-attachments/assets/fcee58c5-5b91-42ff-9bb6-5f37942a972d)
 
 ## Methods
