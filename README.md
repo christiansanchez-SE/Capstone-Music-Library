@@ -1,7 +1,25 @@
 # Music Library Capstone Project
 
+## Table of Contents
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [Webpage Image](#webpage-images)
+- [Methods](#methods)
+- [Backend](#backend)
+- [Frontend](#frontend)
+- [Key Operations](#key-operations)
+- [Features](#features)
+- [Additionals](#additionals)
+- [Challenges](#challenges)
+- [Future Edits](#future-edits)
+- [Acknowledgements](#acknowledgements)
+
 ## Overview
 This application is an interactive music library where users can get, create, edit, and delete music entries from the library. The project showcases basic CRUD (Create, Read, Update, Delete) operations with a user-friendly interface. The loading of the page might take a little to render. 
+
+## Demo
+
+You can view the live demo [here](https://music-library-csproject.netlify.app/).
 
 ## Web Images
 ![Music Library Image One](https://github.com/user-attachments/assets/9e6fd4ea-b72d-4833-81ae-62d080fcc316)
@@ -50,3 +68,10 @@ This application features both a backend and a frontend, both linked together to
 
 ## Future Edits
 - **Login & Sign Up**: I want to create a login and sign up feature so users could make there own playlist.
+
+## Acknowledgements
+- HTML5
+- CSS3
+- JavaScript
+- Vite & React
+- netlify (for deployment) 
